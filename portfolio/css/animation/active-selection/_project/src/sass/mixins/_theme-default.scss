@@ -1,0 +1,9 @@
+@mixin h1-defaults {
+  color: #ececec;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  width: 100%;
+  z-index: 100;
+  padding: 0 0 15px;
+}

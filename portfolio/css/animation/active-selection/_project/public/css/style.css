@@ -1,0 +1,22 @@
+/* BASE */
+.animation-canvas {
+  background-color: #CCC;
+  font-family: 'Roboto', sans-serif;
+  margin: 100px 0;
+  padding: 0px; }
+  .animation-canvas h1 {
+    color: #ececec;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 100%;
+    z-index: 100;
+    padding: 0 0 15px; }
+  .animation-canvas .display-area {
+    background-color: aliceblue;
+    padding: 145px; }
+    .animation-canvas .display-area .back-lit-area {
+      background-color: rgba(0, 0, 0, 0.24);
+      box-shadow: 0px 0px 10px #CCC;
+      border: 2px solid #a2a2a2;
+      padding: 10px; }

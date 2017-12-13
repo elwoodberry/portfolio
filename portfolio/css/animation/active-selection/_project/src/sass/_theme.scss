@@ -1,0 +1,22 @@
+.animation-canvas {
+  background-color: #CCC;
+  font-family: 'Roboto', sans-serif;
+  margin: 100px 0;
+  padding: 0px;
+
+  h1 {
+    @include h1-defaults;
+  }
+
+  .display-area {
+    background-color: aliceblue;
+    padding: 145px;
+
+    .back-lit-area {
+      background-color: rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 0px 10px #CCC;
+    border: 2px solid #a2a2a2;
+    padding: 10px;
+    }
+  }
+}
