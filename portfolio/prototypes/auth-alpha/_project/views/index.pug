@@ -8,47 +8,20 @@ block content
 
       //- BRAND IMAGE
       //- Expects string or image.
-      .brand-container nfxn
+      .brand-container Acme Inc.
 
-      .card
+      //- ACCOUNT SIGN IN CARD
+      //- Default visible element
+      include ./partials/auth-alpha/sign-in.pug
 
-        .card-body
-          h2 Sign In
-          p Create an account for this incredible application. &nbsp;
-            a(id="learn-more" href="#") Learn More
-          p Already have an account? &nbsp;
-            a(id="sign-in" href="#") Sign In
+      //- ACCOUNT REGISTER
+      //- Register an account with the application.
+      include ./partials/auth-alpha/create-account.pug
 
-          form(method="post" action="/login")
-            .form-group
-              label(for="username") Username
-              input(type="email" name="username" id="username" class="form-control" placeholder="Username")
+      //- FORGOT PASSWORD
+      //- Forgot password form.
+      include ./partials/auth-alpha/forgot.pug
 
-            .form-group
-              label(for="password") Password
-              input(type="password" name="password" id="password" class="form-control" placeholder="Password")
-
-            .form-check
-              label(class="form-check-label")
-                input(type="checkbox" class="form-check-input")
-                span Remember Me
-
-            a(id="create-an-account" class="btn btn-primary")
-              i(class="fa fa-lock" aria-hidden="true") &nbsp;
-              span Submit
-
-          small
-            span By clicking Sign In, you agree to our &nbsp;
-            a(id="license-agreement" href="#") Terms of Use
-            span &nbsp; and  &nbsp;
-            a(id="privacy-statement" href="#") Privacy Statement.
-
-          hr
-
-          a(id="license-agreement" href="#") I forgot my username or password
-          br
-          span New to NFXN? &nbsp;
-          a(id="privacy-statement" href="#") Create an account.
-
-
+      //- FOOTER
+      //- This shows for all.
       include ./partials/auth-alpha/footer.pug

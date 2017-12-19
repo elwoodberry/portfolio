@@ -6,6 +6,9 @@
   transition-property: opacity;
   transform: translateY(20px);
 
+  .hide {
+    transform: rotateY(180deg);
+  }
 
   small {
     a {
@@ -25,6 +28,10 @@
     box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.25);
     margin: 0 auto;
     max-width: 380px;
+    position: absolute;
+    left: 50px;
+    backface-visibility: hidden;
+    transition: transform 400ms ease-out;
 
     .card-body {
       padding: 40px 25px;
@@ -64,7 +71,7 @@
 
   footer {
     margin-bottom: 20px;
-    
+
     .links {
       text-align: center;
       align-items: center;

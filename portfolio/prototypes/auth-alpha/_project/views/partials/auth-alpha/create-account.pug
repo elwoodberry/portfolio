@@ -1,0 +1,41 @@
+#card-create.card.hide
+
+  .card-body
+    h2 Create An Account
+    p Already have an account? &nbsp;
+      a(id="sign-in" href="#") Sign In
+
+    form(method="post" action="/login")
+
+      .form-group
+        label(for="name") Name
+        input(type="text" name="name" class="form-control" placeholder="Full Name")
+
+      .form-group
+        label Username
+        input(type="text" class="form-control" placeholder="Username" name="username")
+
+      .form-group
+        label email
+        input(type="email" class="form-control" placeholder="email" name="email")
+
+      .form-group
+        label password
+        input(type="password" class="form-control" placeholder="password" name="password")
+
+      .form-group
+        label Confirm Password
+        input(type="password" class="form-control" placeholder="password" name="password2")
+
+      button(id="create-an-account" type="submit" class="btn btn-primary") Register
+
+
+    small
+      span By clicking Sign In, you agree to our &nbsp;
+      a(id="license-agreement" href="#") Terms of Use
+      span &nbsp; and  &nbsp;
+      a(id="privacy-statement" href="#") Privacy Statement.
+      
+    hr
+
+    a(id="link-forgot-password" href="#") I forgot my username or password
