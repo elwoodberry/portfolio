@@ -5,17 +5,17 @@ This view combines three forms (Sign In, Registration & Forgot Password) into on
 
 ### Sign In
 As An End User, I have the ability to:
-Learn more about becoming a registered user of this application.
-Sign into an existing account.
-Provide my username associated with my registered account.
-Provide my password associated with my registered account.
-Have my access be cached in my browser so the app "Remembers" me.
-Submit my username and password to access my account.
-Learn more about the terms of use for this application.
-Learn more about the privacy policy for this application.
-Gain help if I have forgotten my username or password.
-Create an account for this application
-Learn more about other legal terms, policies and/or security terms.
+1. Learn more about becoming a registered user of this application.
+1. Sign into an existing account.
+1. Provide my username associated with my registered account.
+1. Provide my password associated with my registered account.
+1. Have my access be cached in my browser so the app "Remembers" me.
+1. Submit my username and password to access my account.
+1. Learn more about the terms of use for this application.
+1. Learn more about the privacy policy for this application.
+1. Gain help if I have forgotten my username or password.
+1. Create an account for this application
+1. Learn more about other legal terms, policies and/or security terms.
 
 Sign In   | Transition    
 :---   | :---:   
