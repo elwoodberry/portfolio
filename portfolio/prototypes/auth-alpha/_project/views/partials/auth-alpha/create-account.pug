@@ -1,41 +1,32 @@
 #card-create.card.hide
 
   .card-body
-    h2 Create An Account
+    h2 One Application. One Account.
+    p Create an account for all of Acme's products. &nbsp;
+      a(id="create-link-learn-more" href="#") Learn More
     p Already have an account? &nbsp;
-      a(id="sign-in" href="#") Sign In
+      a(id="create-link-signin" href="#") Sign In
 
     form(method="post" action="/login")
 
       .form-group
-        label(for="name") Name
-        input(type="text" name="name" class="form-control" placeholder="Full Name")
+        label(for="create-email") Email
+        input(type="email" class="form-control" placeholder="email" name="create-email")
 
       .form-group
-        label Username
-        input(type="text" class="form-control" placeholder="Username" name="username")
+        label(for="create-phone")  Phone (recommended)
+        input(type="text" class="form-control" placeholder="Username" name="create-phone")
+        small Standard call, messaging or data rates may apply.
 
       .form-group
-        label email
-        input(type="email" class="form-control" placeholder="email" name="email")
+        label(for="create-password") password
+        input(type="password" class="form-control" placeholder="password" name="create-password")
 
-      .form-group
-        label password
-        input(type="password" class="form-control" placeholder="password" name="password")
-
-      .form-group
-        label Confirm Password
-        input(type="password" class="form-control" placeholder="password" name="password2")
-
-      button(id="create-an-account" type="submit" class="btn btn-primary") Register
+      button(id="create-an-account" type="submit" class="btn btn-primary") Create Account
 
 
     small
-      span By clicking Sign In, you agree to our &nbsp;
-      a(id="license-agreement" href="#") Terms of Use
+      span By clicking Create Account, you agree to our &nbsp;
+      a(id="license-agreement" href="#") License Agreement
       span &nbsp; and  &nbsp;
       a(id="privacy-statement" href="#") Privacy Statement.
-      
-    hr
-
-    a(id="link-forgot-password" href="#") I forgot my username or password

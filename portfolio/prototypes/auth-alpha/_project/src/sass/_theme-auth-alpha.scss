@@ -4,7 +4,9 @@
   padding: 10px;
   text-align: center;
   transition-property: opacity;
-  transform: translateY(20px);
+  transform: translateY(0px);
+  max-width: 380px;
+  margin: 0 auto;
 
   .hide {
     transform: rotateY(180deg);
@@ -20,7 +22,7 @@
     font-size: 48px;
     font-weight: 400;
     color: #9a9a9a;
-    margin: 5px 0;
+    margin: 5px 0 630px;
     padding: 5px 0;
   }
 
@@ -29,9 +31,10 @@
     margin: 0 auto;
     max-width: 380px;
     position: absolute;
-    left: 50px;
+    left: 0px;
     backface-visibility: hidden;
     transition: transform 400ms ease-out;
+    top: 100px;
 
     .card-body {
       padding: 40px 25px;
@@ -64,6 +67,15 @@
 
         &:hover {
           background-color: rgba(0, 119, 197, 0.71);
+        }
+      }
+      .cancel-btn {
+        background-color: transparent;
+        border: 1px solid rgba(165, 165, 165, 0.2);
+        color: #a5a5a5;
+
+        &:hover {
+          background-color: rgba(239, 239, 239, 0.71);
         }
       }
     }

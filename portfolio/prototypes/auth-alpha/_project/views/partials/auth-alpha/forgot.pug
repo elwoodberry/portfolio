@@ -1,37 +1,26 @@
 #card-forgot.card.hide
 
   .card-body
-    h2 Forgot Password?
-    p Create an account for this incredible application. &nbsp;
-      a(id="learn-more" href="#") Learn More
+    h2 Sign In Help?
+    p One account. Everything Intuit. Your Intuit account can access all of our products including Mint. &nbsp;
+    p Already have an account? &nbsp;
+      a(id="link-forgot-signin" href="#") Sign In
 
     form(method="post" action="/login")
       .form-group
-        label(for="username") Username
-        input(type="email" name="username" id="username" class="form-control" placeholder="Username")
+        label(for="forgot-username") Phone number, email or user ID
+        input(type="email" name="forgot-username" id="forgot-username" class="form-control" placeholder="Username")
 
-      .form-group
-        label(for="password") Password
-        input(type="password" name="password" id="password" class="form-control" placeholder="Password")
-
-      .form-check
-        label(class="form-check-label")
-          input(type="checkbox" class="form-check-input")
-          span Remember Me
-
-      a(id="create-an-account" class="btn btn-primary")
+      a(id="btn-forgot-continue" class="btn btn-primary")
         i(class="fa fa-lock" aria-hidden="true") &nbsp;
-        span Submit
+        span Continue
+
+      a(id="btn-forgot-cancel" class="btn btn-primary cancel-btn")
+        i(class="fa fa-lock" aria-hidden="true") &nbsp;
+        span Cancel
 
     small
-      span By clicking Sign In, you agree to our &nbsp;
-      a(id="license-agreement" href="#") Terms of Use
+      span Invisible reCAPTCHA by Google &nbsp;
+      a(id="link-forgot-license-agreement" href="#") Terms of Use
       span &nbsp; and  &nbsp;
-      a(id="privacy-statement" href="#") Privacy Statement.
-
-    hr
-
-    a(id="license-agreement" href="#") I forgot my username or password
-    br
-    span New to Acme? &nbsp;
-    a(id="privacy-statement" href="#") Create an account.
+      a(id="link-forgot-privacy-statement" href="#") Privacy Statement.
