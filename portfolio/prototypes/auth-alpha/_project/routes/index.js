@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+// ROOT
 router.get('/', function(req, res, next) {
   res.render('index', {
     title: "Title",
@@ -11,5 +11,22 @@ router.get('/', function(req, res, next) {
     twitterImage: "http://domain.com"
   });
 });
+
+// DASHBOARD
+router.get('/dashboard', ensureAuthenticated, function(req, res){
+  res.render('dashboard', {
+    title: "Dashboard Title Has Been Here",
+    description: "index description"
+  })
+});
+
+function ensureAuthenticated(req, res, next){
+      if(req.isAuthenticated()){
+        return next();
+      }else {
+        req.flash('error_msg', 'You Are Not Logged In');
+        res.redirect('/users/login');
+      }
+}
 
 module.exports = router;

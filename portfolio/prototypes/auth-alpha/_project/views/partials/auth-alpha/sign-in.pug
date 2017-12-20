@@ -6,7 +6,7 @@
     p Create an account for this incredible application. &nbsp;
       a(id="link-sigin-learn-more" href="#") Learn More
 
-    form(method="post" action="/login")
+    form(method="post" action="/users/login")
       .form-group
         label(for="username") Username
         input(type="email" name="username" id="username" class="form-control" placeholder="Username")
@@ -20,9 +20,7 @@
           input(type="checkbox" class="form-check-input")
           span Remember Me
 
-      a(id="create-an-account" class="btn btn-primary")
-        i(class="fa fa-lock" aria-hidden="true") &nbsp;
-        span Submit
+      button(id="create-an-account" type="submit" class="btn btn-primary") Submit
 
     small
       span By clicking Sign In, you agree to our &nbsp;

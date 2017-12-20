@@ -1,13 +1,27 @@
 // PACKAGES
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    pug = require('pug'),
+    expressValidator = require('express-validator'),
+    flash = require('connect-flash'),
+    session = require('express-session'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy,
+    mongo = require('mongodb'),
+    mongoose = require('mongoose');
+
+// CONNECT TO DATABASE
+mongoose.connect('mongodb://localhost/passportprjct');
+var db = mongoose.connection;
+
 
 // ROUTES
-var index = require('./routes/index');
+var index = require('./routes/index'),
+    users = require('./routes/rt-users');
 
 // EXPRESS
 var app = express();
@@ -27,8 +41,52 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/scripts', express.static(path.join(__dirname, 'node_modules')));
 
+// EXPRESS SESSION
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true
+}));
+
+// PASSPORT INIT
+app.use(passport.initialize());
+app.use(passport.session());
+
+// EXPRESS VALIDATOR
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value){
+    var namespace = param.split('.'),
+        root = namespace.shift(),
+        formParam = root;
+
+    while(namespace.length){
+      formParam += '[' + namespace.shift() + ']';
+    }
+
+    return {
+      param: formParam,
+      msg: msg,
+      value: value
+    };
+  }
+}));
+
+
+// CONNECT FLASH
+app.use(flash());
+
+// GLOBAL VARIABLES FOR FLASH MESSAGES
+app.use(function(req, res, next){
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  res.locals.user = req.user || null;
+  next();
+});
+
 // ROUTES
 app.use('/', index);
+app.use('/users', users);
 
 // ERRORS
 // 404
@@ -49,7 +107,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// PORT
-app.listen(3000, () => {
+// SET PORT
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), function(){
   console.log('Ready');
 });
