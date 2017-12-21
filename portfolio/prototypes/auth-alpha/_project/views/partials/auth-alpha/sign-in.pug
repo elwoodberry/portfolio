@@ -1,5 +1,8 @@
 
 - cardDisplay = errors ? 'card hide errors' : 'card'
+- successMsg = success_msg ? 'msg' : 'alert alert-success'
+- errorMsg = error_msg ? 'msg' : 'alert alert-danger'
+- errorErr = error ? 'msg' : 'alert alert-warning'
 
 #card-signin(class=""+cardDisplay)
   .card-body
@@ -8,6 +11,11 @@
 
     p Create an account for this incredible application. &nbsp;
       a(id="link-sigin-learn-more" href="#") Learn More
+
+    //- FLASH MESSAGES FOR REGISTRATION
+    div(class=""+successMsg) #{success_msg}
+    div(class=""+errorMsg) #{error_msg}
+    div(class=""+errorErr) #{error}
 
     form(method="post" action="/users/login")
       .form-group

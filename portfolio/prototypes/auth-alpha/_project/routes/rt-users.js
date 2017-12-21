@@ -13,27 +13,44 @@ router.post('/register', function(req, res, next) {
       phone = req.body.createPhone,
       password = req.body.createPassword;
 
+  console.log('Email: ' + email + '\nPhone: ' + phone + '\nPassword: ' + password);
+
   // VALIDATION
   // This needs to be updated to the ES6 version
-  req.checkBody('email', 'Email is required.').isEmail();
-  req.checkBody('phone', 'Phone is required.').notEmpty();
-  req.checkBody('password', 'Password is required.').notEmpty();
+  req.checkBody('createEmail', 'Email is required.').isEmail();
+  req.checkBody('createPhone', 'Phone is required.').notEmpty();
+  req.checkBody('createPassword', 'Password is required.').notEmpty();
 
   // Define errors variable as the validation errors function.
   var errors = req.validationErrors();
 
   if(errors){
     res.render('index', {
+      log: "Something is Wrong..",
       errors: errors
     });
-  }
-  // TESTING
-  // Variables are being captured.
-  console.log(email);
-  console.log(phone);
-  console.log(password);
 
-  console.log(errors)
+    console.log(errors);
+
+  }else {
+    // Create A New User
+    var newUser = new User({
+      email: email,
+      phone: phone,
+      password: password
+    });
+
+    console.log(newUser);
+
+    User.createUser(newUser, function(err, user){
+      if(err) throw err;
+      console.log('USER:' + user);
+    });
+
+    req.flash('success_msg', 'You Are Registered And Can Now Log In.');
+
+    res.redirect('/');
+  }
 });
 
 // CONFIGURATION
