@@ -86,7 +86,7 @@ app.use(function(req, res, next){
 
 // ROUTES
 app.use('/', index);
-app.use('/users', users);
+app.use('/', users);
 
 // ERRORS
 // 404

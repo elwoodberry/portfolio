@@ -1,4 +1,6 @@
-#card-create.card.hide
+- cardDisplay = errors ? 'card errors' : 'card hide '
+
+#card-create(class=""+cardDisplay)
 
   .card-body
     h2 One Application. One Account.
@@ -7,20 +9,28 @@
     p Already have an account? &nbsp;
       a(id="create-link-signin" href="#") Sign In
 
-    form(method="post" action="/users/register")
+    //- FLASH MESSAGES
+    .msgs(style="color:#FF0000;")
+      .bckgrnd
+
+      if(errors)
+        each error in errors
+          div= error.msg
+
+    form(method="post" action="/register")
 
       .form-group
-        label(for="create-email") Email
-        input(type="email" class="form-control" placeholder="email" name="create-email")
+        label(for="createEmail") Email
+        input(name="createEmail" type="email" class="form-control" placeholder="Email" )
 
       .form-group
-        label(for="create-phone")  Phone (recommended)
-        input(type="text" class="form-control" placeholder="Username" name="create-phone")
+        label(for="createPhone")  Phone (recommended)
+        input(name="createPhone" type="text" class="form-control" placeholder="Phone")
         small Standard call, messaging or data rates may apply.
 
       .form-group
-        label(for="create-password") password
-        input(type="password" class="form-control" placeholder="password" name="create-password")
+        label(for="createPassword") password
+        input(name="createPassword" type="password" class="form-control" placeholder="Password")
 
       button(id="create-an-account" type="submit" class="btn btn-primary") Create Account
 

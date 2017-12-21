@@ -1,4 +1,7 @@
-#card-signin.card
+
+- cardDisplay = errors ? 'card hide errors' : 'card'
+
+#card-signin(class=""+cardDisplay)
   .card-body
 
     h2 Sign In
@@ -20,7 +23,7 @@
           input(type="checkbox" class="form-check-input")
           span Remember Me
 
-      button(id="create-an-account" type="submit" class="btn btn-primary") Submit
+      button(id="sign-in" type="submit" class="btn btn-primary") Sign In
 
     small
       span By clicking Sign In, you agree to our &nbsp;

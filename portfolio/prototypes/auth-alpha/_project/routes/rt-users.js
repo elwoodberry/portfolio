@@ -7,44 +7,33 @@ var User = require('../models/mdl-users');
 
 // POST REQ: REGISTER
 router.post('/register', function(req, res, next) {
-  var name = req.body.name,
-      email = req.body.email,
-      username = req.body.username,
-      password = req.body.password,
-      password2 = req.body.password2;
+
+  // Get all the things being submited and put them into a variable.
+  var email = req.body.createEmail,
+      phone = req.body.createPhone,
+      password = req.body.createPassword;
 
   // VALIDATION
-  req.checkBody('name', 'Name is required').notEmpty();
-  req.checkBody('email', 'Email is required').notEmpty();
-  req.checkBody('email', 'Email is not valid.').isEmail();
-  req.checkBody('username', 'Username is required').notEmpty();
-  req.checkBody('password', 'Password is required').notEmpty();
-  req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
+  // This needs to be updated to the ES6 version
+  req.checkBody('email', 'Email is required.').isEmail();
+  req.checkBody('phone', 'Phone is required.').notEmpty();
+  req.checkBody('password', 'Password is required.').notEmpty();
 
+  // Define errors variable as the validation errors function.
   var errors = req.validationErrors();
 
   if(errors){
-    res.render('register', {
-      log: "Something is Wrong..",
+    res.render('index', {
       errors: errors
     });
-  } else {
-    var newUser = new User({
-      name: name,
-      email: email,
-      username: username,
-      password: password
-    });
-
-    User.createUser(newUser, function(err, user){
-      if(err) throw err;
-      console.log(user);
-    });
-
-    req.flash('success_msg', 'You Are Registered And Can Now Log In.');
-
-    res.redirect('/');
   }
+  // TESTING
+  // Variables are being captured.
+  console.log(email);
+  console.log(phone);
+  console.log(password);
+
+  console.log(errors)
 });
 
 // CONFIGURATION

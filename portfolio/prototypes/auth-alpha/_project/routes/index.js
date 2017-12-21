@@ -12,14 +12,6 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// DASHBOARD
-router.get('/dashboard', ensureAuthenticated, function(req, res){
-  res.render('dashboard', {
-    title: "Dashboard Title Has Been Here",
-    description: "index description"
-  })
-});
-
 function ensureAuthenticated(req, res, next){
       if(req.isAuthenticated()){
         return next();

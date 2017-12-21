@@ -11,7 +11,7 @@
   .hide {
     transform: rotateY(180deg);
   }
-
+  
   small {
     a {
       font-size: 80%;
@@ -24,6 +24,27 @@
     color: #9a9a9a;
     margin: 5px 0 630px;
     padding: 5px 0;
+
+    .msgs {
+      position: relative;
+      padding: 20px 0;
+      text-align: left;
+
+      .span {
+        position: relative;
+        z-index: 1;
+      }
+      .bckgrnd {
+        background-color: rgba(128, 0, 0, 0.3);
+        left: -30px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 120%;
+        z-index: 0;
+      }
+    }
+
   }
 
   .card {
@@ -33,7 +54,8 @@
     position: absolute;
     left: 0px;
     backface-visibility: hidden;
-    transition: transform 400ms ease-out;
+    transition: 400ms ease-out;
+    transition-property: transform, top;
     top: 100px;
 
     .card-body {

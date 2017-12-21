@@ -26,6 +26,21 @@ body {
     color: #9a9a9a;
     margin: 5px 0 630px;
     padding: 5px 0; }
+    #auth-alpha .brand-container .msgs {
+      position: relative;
+      padding: 20px 0;
+      text-align: left; }
+      #auth-alpha .brand-container .msgs .span {
+        position: relative;
+        z-index: 1; }
+      #auth-alpha .brand-container .msgs .bckgrnd {
+        background-color: rgba(128, 0, 0, 0.3);
+        left: -30px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 120%;
+        z-index: 0; }
   #auth-alpha .card {
     box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.25);
     margin: 0 auto;
@@ -33,7 +48,8 @@ body {
     position: absolute;
     left: 0px;
     backface-visibility: hidden;
-    transition: transform 400ms ease-out;
+    transition: 400ms ease-out;
+    transition-property: transform, top;
     top: 100px; }
     #auth-alpha .card .card-body {
       padding: 40px 25px; }
