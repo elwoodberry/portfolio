@@ -43,20 +43,20 @@ var express = require('express'),
     mongo = require('mongodb'),
     mongoose = require('mongoose');
 ```
-bcryptjs
-body-parser
-connect-flash
-cookie-parser
-express
-express-messages
-express-session
-express-validator
-mongodb
-mongoose
-passport
-passport-http
-passport-local
-pug
+1. [bcryptjs](#)
+1. [body-parser](#)
+1. [connect-flash](#)
+1. [cookie-parser](#)
+1. [express](#)
+1. [express-messages](#)
+1. [express-session](#)
+1. [express-validator](#)
+1. [mongodb](#)
+1. [mongoose](#)
+1. [passport](#)
+1. [passport-http](#)
+1. [passport-local](#)
+1. [pug](#)
 
 
 ### Models
@@ -71,3 +71,9 @@ pug
 1. [Paypal](https://www.mint.com/)
 1. [BudgetBoss](https://www.mint.com/)
 1. [Stash](https://www.mint.com/)
+
+### Access
+1. Name: 'master'
+1. Username: 'master'
+1. Email: 'master@email.com'
+1. Password: 'master'

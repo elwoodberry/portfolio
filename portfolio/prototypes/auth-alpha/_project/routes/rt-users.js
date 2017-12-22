@@ -40,11 +40,8 @@ router.post('/register', function(req, res, next) {
       password: password
     });
 
-    console.log(newUser);
-
     User.createUser(newUser, function(err, user){
       if(err) throw err;
-      console.log('USER:' + user);
     });
 
     req.flash('success_msg', 'You Are Registered And Can Now Log In.');
@@ -53,15 +50,17 @@ router.post('/register', function(req, res, next) {
   }
 });
 
-// CONFIGURATION
+// LOCAL STRATEGY CONFIGURATION
 passport.use(new LocalStrategy(function(username, password, done) {
 
+  // MODEL FUNCTION: 'GET USER BY USERNAME'
   User.getUserByUsername(username, function(err, user){
     if(err) throw err;
     if(!user){
       return done(null, false, {message: "Unknown User"});
     }
 
+    // MODEL FUNCTION: 'COMPARE PASSWORD'
     User.comparePassword(password, user.password, function(err, isMatch){
       if(err) throw err;
       if(isMatch){
@@ -85,24 +84,16 @@ passport.deserializeUser(function(id, done){
   });
 });
 
-// Authenticate
+// POST REQ: LOGIN
 router.post('/login',
   passport.authenticate('local', {
     successRedirect: '/dashboard',
-    failureRedirect: '/users/register',
+    failureRedirect: '/',
     failureFlash: true
   }), function(req, res) {
     res.redirect('/dashboard');
 });
 
-// LOGOUT
-router.get('/logout', function(req, res){
-  req.logout();
 
-  req.flash('success_msg', 'You Are Logged Out.');
-
-  res.redirect('/');
-
-});
 
 module.exports = router;

@@ -1,10 +1,9 @@
-
-- cardDisplay = errors ? 'card hide errors' : 'card'
+//- FLASH MESSAGES
 - successMsg = success_msg ? 'msg' : 'alert alert-success'
 - errorMsg = error_msg ? 'msg' : 'alert alert-danger'
 - errorErr = error ? 'msg' : 'alert alert-warning'
 
-#card-signin(class=""+cardDisplay)
+#card-signin.card
   .card-body
 
     h2 Sign In
@@ -17,14 +16,16 @@
     div(class=""+errorMsg) #{error_msg}
     div(class=""+errorErr) #{error}
 
-    form(method="post" action="/users/login")
+    form(method="post" action="/login")
       .form-group
-        label(for="username") Username
-        input(type="email" name="username" id="username" class="form-control" placeholder="Username")
+        label Username
+        input(type="email" name="username" class="form-control" placeholder="Username")
+        // input(type="text" name="username" class="form-control" placeholder="Legacy Username")
 
       .form-group
-        label(for="password") Password
-        input(type="password" name="password" id="password" class="form-control" placeholder="Password")
+        label Password
+        input(type="password" name="password" class="form-control" placeholder="Password")
+        // input(type="password" name="password" class="form-control" placeholder="Legacy Password")
 
       .form-check
         label(class="form-check-label")

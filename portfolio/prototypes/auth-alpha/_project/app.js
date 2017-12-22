@@ -15,7 +15,7 @@ var express = require('express'),
     mongoose = require('mongoose');
 
 // CONNECT TO DATABASE
-mongoose.connect('mongodb://localhost/passportprjct');
+mongoose.connect('mongodb://localhost/accessalpha');
 var db = mongoose.connection;
 
 
