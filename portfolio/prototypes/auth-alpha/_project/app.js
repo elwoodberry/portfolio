@@ -1,4 +1,3 @@
-// PACKAGES
 var express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon'),
@@ -17,7 +16,6 @@ var express = require('express'),
 // CONNECT TO DATABASE
 mongoose.connect('mongodb://localhost/accessalpha');
 var db = mongoose.connection;
-
 
 // ROUTES
 var index = require('./routes/index'),
@@ -95,6 +93,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

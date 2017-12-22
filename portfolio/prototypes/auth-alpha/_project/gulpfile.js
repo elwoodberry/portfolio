@@ -1,13 +1,13 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const babel = require('gulp-babel');
 
 // GULP SASS
 gulp.task('sass', function(){
   gulp.src('src/sass/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('public/css'))
 });
 
 // GULP CONCAT

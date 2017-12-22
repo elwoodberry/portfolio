@@ -44,20 +44,20 @@ var express = require('express'),
     mongo = require('mongodb'),
     mongoose = require('mongoose');
 ```
-1. [bcryptjs](#)
-1. [body-parser](#)
-1. [connect-flash](#)
-1. [cookie-parser](#)
-1. [express](#)
-1. [express-messages](#)
-1. [express-session](#)
-1. [express-validator](#)
-1. [mongodb](#)
-1. [mongoose](#)
-1. [passport](#)
-1. [passport-http](#)
-1. [passport-local](#)
-1. [pug](#)
+1. [bcryptjs](https://www.npmjs.com/package/)
+1. [body-parser](https://www.npmjs.com/package/)
+1. [connect-flash](https://www.npmjs.com/package/)
+1. [cookie-parser](https://www.npmjs.com/package/)
+1. [express](https://www.npmjs.com/package/)
+1. [express-messages](https://www.npmjs.com/package/)
+1. [express-session](https://www.npmjs.com/package/)
+1. [express-validator](https://www.npmjs.com/package/express-validator)
+1. [mongodb](https://www.npmjs.com/package/)
+1. [mongoose](https://www.npmjs.com/package/)
+1. [passport](https://www.npmjs.com/package/)
+1. [passport-http](https://www.npmjs.com/package/)
+1. [passport-local](https://www.npmjs.com/package/)
+1. [pug](https://www.npmjs.com/package/)
 
 
 ### Models

@@ -19,20 +19,18 @@
     form(method="post" action="/login")
       .form-group
         label Username
-        input(type="email" name="username" class="form-control" placeholder="Username")
-        // input(type="text" name="username" class="form-control" placeholder="Legacy Username")
+        input(id="signinUsername" type="email" name="username" onfocus="preValidUsername(this)" class="form-control" placeholder="Username")
 
       .form-group
         label Password
-        input(type="password" name="password" class="form-control" placeholder="Password")
-        // input(type="password" name="password" class="form-control" placeholder="Legacy Password")
+        input(id="signinPassword" type="password" name="password" onfocus="preValidPassword(this)" class="form-control" placeholder="Password")
 
       .form-check
         label(class="form-check-label")
           input(type="checkbox" class="form-check-input")
           span Remember Me
 
-      button(id="sign-in" type="submit" class="btn btn-primary") Sign In
+      button(id="sign-in" type="submit" class="btn btn-primary" disabled) Sign In
 
     small
       span By clicking Sign In, you agree to our &nbsp;

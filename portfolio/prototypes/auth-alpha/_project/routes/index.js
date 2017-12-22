@@ -4,8 +4,8 @@ var router = express.Router();
 // ROOT
 router.get('/', function(req, res, next) {
   res.render('index', {
-    title: "Title",
-    description: "Description",
+    title: "Acme Inc.  - Access Alpha",
+    description: "Access Alpha || This is a login, register & forgot password demo",
     robots: "follow",
     canonical: "http://domain.com",
     twitterImage: "http://domain.com"

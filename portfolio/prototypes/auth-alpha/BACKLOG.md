@@ -2,9 +2,10 @@
 App Access (ALPHA)
 
 ## Incomplete Tasks
-1. [Style Flash Messages](#)
-1. [Add jQuery form validation](#)
-1. [Encapsulate javascript files](#)
+1. [Style Flash Messages](#style-flash-messages)
+1. [Add jQuery form validation](#add-jquery-form-validation)
+1. [Encapsulate javascript files](#encapsulate-javascript-files)
+1. [Re-write in ES6](#re-write-in-es6)
 
 ## Completed Tasks
 1. [Add Simple Dashboard](#add-simple-dashboard)
@@ -31,13 +32,24 @@ App Access (ALPHA)
 **STATUS:** Incomplete  
 To encapsulate and then to concatenate them into one single 'main.js' file in the public directory.   
 
-Add Gulp Uglify
-```
-$ npm install --save-dev gulp-uglify
-```
-Add Gulp Concat
+Add [Gulp Concat](https://www.npmjs.com/package/)
 ```
 $ npm install --save-dev gulp-concat
+```
+
+## Re-write in ES6
+**STATUS:** Incomplete
+
+### APP.JS
+### GULP FILE
+
+Babel Core
+```
+$ npm install --save-dev babel-core
+```
+Add [Gulp Babel](https://www.npmjs.com/package/gulp-babel)
+```
+$ npm install --save-dev gulp-babel babel-preset-env
 ```
 
 ## Add Simple Dashboard

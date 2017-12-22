@@ -13,8 +13,6 @@ router.post('/register', function(req, res, next) {
       phone = req.body.createPhone,
       password = req.body.createPassword;
 
-  console.log('Email: ' + email + '\nPhone: ' + phone + '\nPassword: ' + password);
-
   // VALIDATION
   // This needs to be updated to the ES6 version
   req.checkBody('createEmail', 'Email is required.').isEmail();
