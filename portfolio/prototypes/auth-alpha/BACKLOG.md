@@ -2,16 +2,23 @@
 App Access (ALPHA)
 
 ## Incomplete Tasks
-
+1. [Style Flash Messages](#)
+1. [Add jQuery form validation](#)
+1. [Encapsulate javascript files](#)
 
 ## Completed Tasks
 1. [Add Simple Dashboard](#add-simple-dashboard)
 
 
 ## Style Flash Messages
+**STATUS:** Incomplete  
 
 ## Add jQuery form validation
+**STATUS:** Incomplete  
 
+## Encapsulate javascript files
+**STATUS:** Incomplete  
+To encapsulate and then to concatenate them into one single 'main.js' file in the public directory.
 
 ## Add Simple Dashboard
 **STATUS:** ~~Complete~~
