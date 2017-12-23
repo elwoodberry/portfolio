@@ -1,6 +1,6 @@
-- cardDisplay = errors ? 'card errors' : 'card hide '
+- cardCreate = errors ? 'card' : 'card hide'
 
-#card-create(class=""+cardDisplay)
+#card-create(class=""+cardCreate)
 
   .card-body
     h2 One Application. One Account.
@@ -10,12 +10,11 @@
       a(id="create-link-signin" href="#") Sign In
 
     //- FLASH MESSAGES
-    .msgs(style="color:#FF0000;")
-      .bckgrnd
-
-      if(errors)
-        each error in errors
-          div= error.msg
+    //- SUCCESS
+    if(errors)
+      each error in errors
+        .msgs#error-msg
+          .bckgrnd.alert-danger
 
     form(method="post" action="/register")
 
@@ -32,7 +31,7 @@
         label(for="createPassword") password
         input(name="createPassword" type="password" class="form-control" placeholder="Password")
 
-      button(id="create-an-account" type="submit" class="btn btn-primary" disabled) Create Account
+      button(id="create-an-account" type="submit" class="btn btn-primary") Create Account
 
 
     small

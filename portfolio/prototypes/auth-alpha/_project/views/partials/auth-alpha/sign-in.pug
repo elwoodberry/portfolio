@@ -1,9 +1,6 @@
-//- FLASH MESSAGES
-- successMsg = success_msg ? 'msg' : 'alert alert-success'
-- errorMsg = error_msg ? 'msg' : 'alert alert-danger'
-- errorErr = error ? 'msg' : 'alert alert-warning'
+- cardSignin = errors ? 'card hide' : 'card'
 
-#card-signin.card
+#card-signin(class=""+cardSignin)
   .card-body
 
     h2 Sign In
@@ -11,10 +8,27 @@
     p Create an account for this incredible application. &nbsp;
       a(id="link-sigin-learn-more" href="#") Learn More
 
-    //- FLASH MESSAGES FOR REGISTRATION
-    div(class=""+successMsg) #{success_msg}
-    div(class=""+errorMsg) #{error_msg}
-    div(class=""+errorErr) #{error}
+    //- FLASH MESSAGES
+    //- SUCCESS
+    if(success_msg)
+      each success in success_msg
+        .msgs#error-msg
+          span #{success_msg}
+          .bckgrnd.alert-success
+
+    //- ERROR
+    if(error_msg)
+      each error in error_msg
+        .msgs#error-msg
+          span #{error_msg}
+          .bckgrnd.alert-danger
+
+    //- ERROR
+    if(error)
+      each errormsg in error
+        .msgs#system-error
+          span #{error}
+          .bckgrnd.alert-warning
 
     form(method="post" action="/login")
       .form-group
@@ -30,7 +44,7 @@
           input(type="checkbox" class="form-check-input")
           span Remember Me
 
-      button(id="sign-in" type="submit" class="btn btn-primary" disabled) Sign In
+      button(id="sign-in" type="submit" class="btn btn-primary") Sign In
 
     small
       span By clicking Sign In, you agree to our &nbsp;

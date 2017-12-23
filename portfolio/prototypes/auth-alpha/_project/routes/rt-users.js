@@ -55,7 +55,7 @@ passport.use(new LocalStrategy(function(username, password, done) {
   User.getUserByUsername(username, function(err, user){
     if(err) throw err;
     if(!user){
-      return done(null, false, {message: "Unknown User"});
+      return done(null, false, {message: "The username and/or password is not valid."});
     }
 
     // MODEL FUNCTION: 'COMPARE PASSWORD'

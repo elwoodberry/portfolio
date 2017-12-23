@@ -26,21 +26,6 @@ body {
     color: #9a9a9a;
     margin: 5px 0 630px;
     padding: 5px 0; }
-    #auth-alpha .brand-container .msgs {
-      position: relative;
-      padding: 20px 0;
-      text-align: left; }
-      #auth-alpha .brand-container .msgs .span {
-        position: relative;
-        z-index: 1; }
-      #auth-alpha .brand-container .msgs .bckgrnd {
-        background-color: rgba(128, 0, 0, 0.3);
-        left: -30px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        width: 120%;
-        z-index: 0; }
   #auth-alpha .card {
     box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.25);
     margin: 0 auto;
@@ -50,12 +35,33 @@ body {
     backface-visibility: hidden;
     transition: 400ms ease-out;
     transition-property: transform, top;
-    top: 100px; }
+    top: 100px;
+    overflow: hidden; }
     #auth-alpha .card .card-body {
       padding: 40px 25px; }
       #auth-alpha .card .card-body h2 {
         font-size: 24px;
         font-weight: 400; }
+      #auth-alpha .card .card-body .msgs {
+        position: relative;
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid #FFF;
+        margin-bottom: 20px; }
+        #auth-alpha .card .card-body .msgs span {
+          position: relative;
+          z-index: 1; }
+        #auth-alpha .card .card-body .msgs .bckgrnd {
+          left: -30px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          width: 120%;
+          z-index: 0; }
+      #auth-alpha .card .card-body #error-msg.msgs {
+        margin-bottom: 0px; }
+      #auth-alpha .card .card-body #error-msg.msgs:last-child {
+        margin-bottom: 20px; }
     #auth-alpha .card form {
       text-align: left; }
       #auth-alpha .card form .form-check {

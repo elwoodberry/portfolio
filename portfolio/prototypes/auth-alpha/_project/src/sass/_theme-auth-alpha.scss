@@ -11,7 +11,7 @@
   .hide {
     transform: rotateY(180deg);
   }
-  
+
   small {
     a {
       font-size: 80%;
@@ -24,27 +24,6 @@
     color: #9a9a9a;
     margin: 5px 0 630px;
     padding: 5px 0;
-
-    .msgs {
-      position: relative;
-      padding: 20px 0;
-      text-align: left;
-
-      .span {
-        position: relative;
-        z-index: 1;
-      }
-      .bckgrnd {
-        background-color: rgba(128, 0, 0, 0.3);
-        left: -30px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        width: 120%;
-        z-index: 0;
-      }
-    }
-
   }
 
   .card {
@@ -57,6 +36,7 @@
     transition: 400ms ease-out;
     transition-property: transform, top;
     top: 100px;
+    overflow: hidden;
 
     .card-body {
       padding: 40px 25px;
@@ -64,6 +44,36 @@
       h2 {
         font-size: 24px;
         font-weight: 400;
+      }
+
+      .msgs {
+        position: relative;
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid #FFF;
+        margin-bottom: 20px;
+
+        span {
+          position: relative;
+          z-index: 1;
+        }
+        .bckgrnd {
+          left: -30px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          width: 120%;
+          z-index: 0;
+        }
+
+      }
+      #error-msg.msgs {
+        margin-bottom: 0px;
+
+
+      }
+      #error-msg.msgs:last-child {
+        margin-bottom: 20px;
       }
     }
 
