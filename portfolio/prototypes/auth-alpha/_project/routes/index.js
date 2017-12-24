@@ -20,6 +20,14 @@ router.get('/dashboard', ensureAuthenticated, function(req, res){
   })
 });
 
+// CONFIRMATION
+router.get('/confirmation', function(req, res){
+  res.render('confirmation', {
+    title: "Confirm Your Account",
+    description: "Confirm Your Account"
+  })
+});
+
 // LOGOUT
 router.get('/logout', function(req, res){
   req.logout();

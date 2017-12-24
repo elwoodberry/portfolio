@@ -29,6 +29,7 @@ router.post('/register', function(req, res, next) {
     });
 
     console.log(errors);
+    req.flash('error_msg', 'Something is Wrong..');
 
   }else {
     // Create A New User
@@ -42,9 +43,9 @@ router.post('/register', function(req, res, next) {
       if(err) throw err;
     });
 
-    req.flash('success_msg', 'You Are Registered And Can Now Log In.');
+    req.flash('success_msg', 'One more step to completing your account registration.');
 
-    res.redirect('/');
+    res.redirect('/confirmation');
   }
 });
 

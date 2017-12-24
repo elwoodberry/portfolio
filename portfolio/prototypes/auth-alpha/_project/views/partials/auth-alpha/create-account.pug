@@ -10,11 +10,12 @@
       a(id="create-link-signin" href="#") Sign In
 
     //- FLASH MESSAGES
-    //- SUCCESS
-    if(errors)
-      each error in errors
-        .msgs#error-msg
-          .bckgrnd.alert-danger
+    .msg-container
+      if(errors)
+        each error in errors
+          .msgs#error-msg
+            .bckgrnd.alert-danger
+            span #{error.msg}
 
     form(method="post" action="/register")
 

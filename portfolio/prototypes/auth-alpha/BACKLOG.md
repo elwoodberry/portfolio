@@ -2,14 +2,15 @@
 App Access (ALPHA)
 
 ## Incomplete Tasks
-1. [Style Flash Messages](#style-flash-messages)
+
 1. [Add jQuery form validation](#add-jquery-form-validation)
 1. [Encapsulate javascript files](#encapsulate-javascript-files)
 1. [Re-write in ES6](#re-write-in-es6)
+1. [SMS Confirmation](#sms-confirmation)
 
 ## Completed Tasks
 1. [Add Simple Dashboard](#add-simple-dashboard)
-
+1. [Style Flash Messages](#style-flash-messages)
 ---
 ---
 ---
@@ -66,3 +67,7 @@ Simple Jumbotron(pug)
   p
     a(class="btn btn-lg btn-success" href="#" role="button") Sign Out
 ```
+
+## SMS Confirmation
+**STATUS:** Incomplete
+ 

@@ -1,0 +1,43 @@
+extends ./layouts/default.pug
+
+block content
+
+  #auth-alpha
+    .card
+
+      .img-top
+        i(class="fa fa-mobile" aria-hidden="true")
+
+      .card-body
+
+        //- FLASH MESSAGES
+        .msg-container
+          //- SUCCESS
+          if(success_msg)
+            each success in success_msg
+
+              h2(id="success_msg" class="card-title") #{success_msg}
+
+              p(class="card-text") You have been sent a 6 digit code to the phone number you provided. Please enter that code to confirm your account.
+
+              form(method="post" action="/")
+                .form-group
+                  input(id="" type="number" name="" class="form-control" placeholder="Enter 6 Digit Code")
+
+              button(id="" type="submit" class="btn btn-primary" style="width:100%; margin-bottom: 10px;") Confirm
+
+              small
+                span By clicking Confirm, you agree to our &nbsp;
+                a(id="license-agreement" href="#") License Agreement
+                span &nbsp; and  &nbsp;
+                a(id="privacy-statement" href="#") Privacy Statement.
+
+          //- ERROR
+          if(error_msg)
+            each error in error_msg
+              h2(id="error_msg") #{error_msg}
+
+          //- ERROR
+          if(error)
+            each errormsg in error
+              h2(id="error") #{error}

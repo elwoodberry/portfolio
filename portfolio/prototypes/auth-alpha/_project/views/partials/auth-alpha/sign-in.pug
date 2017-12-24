@@ -9,26 +9,27 @@
       a(id="link-sigin-learn-more" href="#") Learn More
 
     //- FLASH MESSAGES
-    //- SUCCESS
-    if(success_msg)
-      each success in success_msg
-        .msgs#error-msg
-          span #{success_msg}
-          .bckgrnd.alert-success
+    .msg-container
+      //- SUCCESS
+      if(success_msg)
+        each success in success_msg
+          .msgs#error-msg
+            span #{success_msg}
+            .bckgrnd.alert-success
 
-    //- ERROR
-    if(error_msg)
-      each error in error_msg
-        .msgs#error-msg
-          span #{error_msg}
-          .bckgrnd.alert-danger
+      //- ERROR
+      if(error_msg)
+        each error in error_msg
+          .msgs#error-msg
+            span #{error_msg}
+            .bckgrnd.alert-danger
 
-    //- ERROR
-    if(error)
-      each errormsg in error
-        .msgs#system-error
-          span #{error}
-          .bckgrnd.alert-warning
+      //- ERROR
+      if(error)
+        each errormsg in error
+          .msgs#system-error
+            span #{error}
+            .bckgrnd.alert-warning
 
     form(method="post" action="/login")
       .form-group
