@@ -56,43 +56,25 @@ Used for the login, register and forgot password.
 
 /*
 PRE VALIDATION
-Meeting form requirements before you submit.
+Input auto fill the punctuation of a phone number to look like this (xxx) xxx-xxxx.
 */
 (function(){
 
-  // BUTTONS
-  const signinBtn = document.getElementById('link-sigin-privacy-statement');
-  const registerBtn = document.getElementById('create-an-account');
-  const forgotBtn = document.getElementById('btn-forgot-continue');
-
-  // FORM FIELDS
-  const signinUsername = document.getElementById('signinUsername');
-  const signinPassword = document.getElementById('signinPassword');
-
-  signinBtn.addEventListener('click', () => {
-    console.log('Sign Button Was Clicked...');
+  $("#registerPhone").on("change keyup paste", function () {
+      var output;
+      var input = $("#registerPhone").val();
+      input = input.replace(/[^0-9]/g, '');
+      var area = input.substr(0, 3);
+      var pre = input.substr(3, 3);
+      var tel = input.substr(6, 4);
+      if (area.length < 3) {
+          output = "(" + area;
+      } else if (area.length == 3 && pre.length < 3) {
+          output = "(" + area + ")" + " " + pre;
+      } else if (area.length == 3 && pre.length == 3) {
+          output = "(" + area + ")" + " " + pre + "-" + tel;
+      }
+      $("#registerPhone").val(output);
   });
-
-  registerBtn.addEventListener('click', () => {
-    console.log('Register Button Was Clicked...');
-  });
-
-  forgotBtn.addEventListener('click', () => {
-    console.log('Forgot Button Was Clicked...');
-  });
-
-  function myFunction(x) {
-      x.style.background = "yellow";
-  }
-  
-  function preValidUsername(x) {
-    x.style.background = "yellow";
-    console.log('Sign In Username Input...');
-  }
-
-  function preValidPassword(x) {
-    x.style.background = "yellow";
-    console.log('Sign In Password Input...');
-  }
 
 })();

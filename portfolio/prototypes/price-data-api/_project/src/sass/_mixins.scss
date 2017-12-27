@@ -1,0 +1,7 @@
+@import "mixins/theme-default";
+
+
+h1 {
+  color: $color ;
+  @include h1-defaults;
+}

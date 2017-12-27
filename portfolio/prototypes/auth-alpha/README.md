@@ -66,9 +66,9 @@ var express = require('express'),
 
 
 
-Sign In   | Transition    
+Register  | Confirm   
 :---   | :---:   
-![image](https://raw.github.com/elwoodberry/portfolio/master/_img/app-access-alpha__04.png)   | ![image](https://raw.github.com/elwoodberry/portfolio/master/_img/app-access-alpha__04.png)
+![image](https://raw.github.com/elwoodberry/portfolio/master/_img/app-access-alpha__03.png)   | ![image](https://raw.github.com/elwoodberry/portfolio/master/_img/app-access-alpha__04.png)
 
 
 

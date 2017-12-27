@@ -7,6 +7,7 @@ App Access (ALPHA)
 1. [Encapsulate javascript files](#encapsulate-javascript-files)
 1. [Re-write in ES6](#re-write-in-es6)
 1. [SMS Confirmation](#sms-confirmation)
+1. [Determine Margin Dynamically](#determine-margin-dynamically)
 
 ## Completed Tasks
 1. [Add Simple Dashboard](#add-simple-dashboard)
@@ -70,4 +71,7 @@ Simple Jumbotron(pug)
 
 ## SMS Confirmation
 **STATUS:** Incomplete
- 
+
+## Determine Margin Dynamically
+**STATUS:** Incomplete  
+The sign in, register and forgot password are all different heights. The footer should follow the different cards based the height of the card.
