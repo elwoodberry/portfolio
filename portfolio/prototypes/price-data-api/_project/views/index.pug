@@ -1,5 +1,60 @@
 extends ./layouts/default.pug
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  .nfxn-row
+    .nfxn-widget(id='exchangeRate-1' style='flex:1;')
+      header Header
+
+      .nfxn-content
+        input(id='input' name='input' class='form-control' placeholder='Base/Quote')
+
+        #exchange-rate-display
+          ul
+            li 1
+            li .
+            li 4
+            li 5
+            li(class='pip') 4
+            li(class='pip') 7
+            li(class='pipette') 5
+
+      footer Footer
+
+    .nfxn-widget(id='exchangeRate-2' style='flex:2;')
+      header Header
+
+      .nfxn-content
+        input(id='input' name='input' class='form-control' placeholder='Base/Quote')
+
+        #exchange-rate-display
+          ul
+            li 1
+            li .
+            li 4
+            li 5
+            li(class='pip') 4
+            li(class='pip') 7
+            li(class='pipette') 5
+
+      footer Footer
+
+  .nfxn-row
+    .nfxn-widget(id='exchangeRate-3' style='flex:1;')
+      header Header
+
+      .nfxn-content
+        form
+          input(id='currencyPair' name='input' class='form-control' placeholder='Base/Quote' maxlength="7")
+
+        #exchange-rate-display
+          ul
+            li 1
+            li .
+            li 4
+            li 5
+            li(class='pip') 4
+            li(class='pip') 7
+            li(class='pipette') 5
+
+      footer Footer

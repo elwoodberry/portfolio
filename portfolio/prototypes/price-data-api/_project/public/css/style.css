@@ -1,8 +1,55 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+/* BASE */
+h1 {
+  color: #FF0000;
+  background-color: rgba(255, 0, 0, 0.2);
+  border-bottom: 1px solid #FF0000;
+  display: block;
+  width: 100%;
+  z-index: 100; }
 
-a {
-  color: #00B7FF;
-}
+.nfxn-row {
+  background-color: #f0fcff;
+  display: flex;
+  margin: 5px 0;
+  padding: 5px 0; }
+
+.nfxn-widget {
+  background-color: rgba(143, 255, 204, 0.35); }
+  .nfxn-widget .nfxn-content {
+    position: relative; }
+  .nfxn-widget input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: 0;
+    transition: all 2s linear 1ms;
+    text-align: left;
+    height: 50px;
+    text-transform: uppercase; }
+  .nfxn-widget input:focus {
+    box-shadow: none; }
+  .nfxn-widget #exchange-rate-display {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 40px;
+    background-color: transparent;
+    line-height: 1; }
+    .nfxn-widget #exchange-rate-display ul {
+      display: flex;
+      list-style: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      -webkit-padding-start: 0; }
+      .nfxn-widget #exchange-rate-display ul li {
+        color: #B0B0B0;
+        flex: 1; }
+      .nfxn-widget #exchange-rate-display ul .pip {
+        color: #EE8700; }
+      .nfxn-widget #exchange-rate-display ul .pipette {
+        color: #B37B7B;
+        font-size: 30px; }
